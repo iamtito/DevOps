@@ -65,7 +65,7 @@ Optional, set automatic start on boot
 ```
 sudo systemctl enable kibana
 ```
-Now your kibana is running on port **5601**, since its running on your localhost based on the **kibana.yml** configuration, you can access it on **http://localhost:9200**
+Now your kibana is running on port **5601**, since its running on your localhost based on the **kibana.yml** configuration, you can access it on **http://localhost:5601**
 ## V. Install Logstash
 The final step is to install Logstash
 ```
