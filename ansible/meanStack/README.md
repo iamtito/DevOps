@@ -238,10 +238,10 @@ So here is the plan, create a `mean.yaml` file and three `(prerequisites.yaml, m
 *[three]: `(prerequisites.yaml, mongodb.yaml and nodejs.yaml)`
 ```
 mean.yaml
-		|--task
-        |--prerequisites.yaml       
-        |--mongodb.yaml       
-        |--nodejs.yaml
+	|--task
+           |--prerequisites.yaml       
+           |--mongodb.yaml       
+           |--nodejs.yaml
 ```    
 Let start:
 
