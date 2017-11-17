@@ -1,0 +1,30 @@
+
+- name: Node.js - Get script
+  get_url:
+    url: "http://deb.nodesource.com/setup_6.x"
+    dest: "{{ var_node }}/nodejs.sh"
+
+- name: NOde.js - Set execution permission to script
+  file:
+    path: "{{ var_node }}/nodejs.sh"
+    mode: "u+x"
+
+- name: Node.js - Execute installation script
+  shell: "{{ var_node }}/nodejs.sh"
+
+- name: Node.js - Remove installation script
+  file:
+    path: "{{ var_node}}/nodejs.sh"
+    state: absent
+
+- name: Node.js - Install NOde.js
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - build-essential
+    - nodejs
+
+- name: Node.js - Install bower and gulp globally
+  npm: name={{ item }} state=present global=yes
+  with_items:
+    - bower
+    - gulp
