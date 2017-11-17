@@ -280,6 +280,7 @@ Create a path called `tasks`, that will be the location of the three files
 ---
 
 **prerequisites.yaml**
+
 In the current directory do the following:
 ```
 $ vi tasks/prerequisites.yaml
@@ -304,6 +305,7 @@ We need `git` inorder for us to install MEAN Stack.
 ---
 
 **mongodb.yaml**
+
 To setup the mongodb playbook we will do the following inside the playbook:
 + Import the mongodb public key
 + Add mongodb repository
@@ -352,6 +354,7 @@ Then we proceed to installing mongodb, after that make sure mongodb is running b
 ---
 
 **nodejs.yaml**
+
 To setup the nodejs playbook we will do the following inside the playbook:
 + Get nodejs script
 + Set execution permission to script
