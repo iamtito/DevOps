@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-test
+spec:
+  containers:
+    - name: test-container-busybox
+      image: busybox
+      command: [ "/bin/sh", "-c", "env" ]
+      env:
+        - name: WHAT_SCHOOL
+          valueFrom:
+            configMapKeyRef:
+              name: my-app
+              key: school
+        - name: STUDENT_NAME
+          value: Tito
+        - name: SCHOOL
+          value: "Linux Academy"
+        - name: KUBERNETES
+          value: "is awesome"
+  restartPolicy: Never
