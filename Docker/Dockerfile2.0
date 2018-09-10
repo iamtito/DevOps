@@ -1,0 +1,37 @@
+FROM ubuntu:14.04
+MAINTAINER tito <tbola45@gmail.com>
+
+#Installing kibana variable
+ENV KB_PKG_NAME kibana-3.1.2
+
+#install apache and wget
+RUN apt-get update && apt-get install -y wget apache2
+
+#Create a directory
+RUN mkdir /var/lock/apache2
+
+#set required environment variabel for apache2
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_PID_FILE /var/run/apache2.pid
+ENV APACHE_RUN_DIR /var/run/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV LANG C
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+
+RUN cd / && wget https://download.elasticsearch.org/kibana/kibana/$KB_PKG_NAME.tar.gz && tar xvzf $KB_PKG_NAME.tar.gz && rm -f $KB_PKG_NAME.tar.gz && mv $KB_PKG_NAME /var/www/html/kibana
+
+#Vol for kibana configuration "config.js" i.e /var/www/html/kibana/config.js
+#Vol for apache2 logs
+#Vol for apache2 config files
+VOLUME ["/var/www/html/kibana"]
+VOLUME ["/var/log/apache2"]
+VOLUME ["/etc/apache2"]
+
+#Define working dir.
+WORKDIR /var/www/html/kibana
+
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+
+EXPOSE 80
