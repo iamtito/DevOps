@@ -4,7 +4,7 @@ provider "aws" {
 resource "aws_instance" "server" {
   ami = "ami-2d39803a"
   instance_type = "t2.micro"
-  tags {
+  tags = {
       Name          = "server-one"
       Environment   = "Production"
       App           = "ecommerce"
