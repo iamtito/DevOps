@@ -38,7 +38,7 @@ jobs:
           tf_actions_version: 0.12.16
           tf_actions_subcommand: 'init'
           tf_actions_comment: true
-          tf_actions_working_dir: - 'DevOps/Terraform/ec2-instance'
+          tf_actions_working_dir: 'DevOps/Terraform/ec2-instance'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,7 +48,7 @@ jobs:
           tf_actions_version: 0.12.16
           tf_actions_subcommand: 'validate'
           tf_actions_comment: true
-          tf_actions_working_dir: - 'DevOps/Terraform/ec2-instance'
+          tf_actions_working_dir: 'DevOps/Terraform/ec2-instance'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -58,7 +58,7 @@ jobs:
           tf_actions_version: 0.12.16
           tf_actions_subcommand: 'plan'
           tf_actions_comment: true
-          tf_actions_working_dir: - 'DevOps/Terraform/ec2-instance'
+          tf_actions_working_dir: 'DevOps/Terraform/ec2-instance'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
