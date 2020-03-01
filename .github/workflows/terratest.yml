@@ -9,7 +9,6 @@ on:
 
       # - 'deployments/terraform/performance/**'
       # - 'deployments/terraform/staging/**'
-      # - 'deployments/terraform/testing/**'
       
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
